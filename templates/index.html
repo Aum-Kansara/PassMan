@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PassMan</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="outer">
+        <div class="header"><h2>PassMan</h2>
+            <div class="sub-header">A Password Manager Tool</div>
+        </div>
+        <hr>
+        <div class="passBox">
+            <div class="creds">
+                {% for cred in creds %}
+                <div class="cred" id="{{cred.id}}">
+                    <div class="credTitle"><h3>{{cred.title}}</div>
+                        <div class="credData">
+                            <div class="id">{{cred.cred_id}}</div>
+                            <button class="idBtn" onclick="try {
+                                                let credID = document.querySelector('#{{cred.id}}').querySelector('.id').innerHTML;
+                                                let credBtn = document.querySelector('#{{cred.id}}').querySelector('.idBtn')
+                                                navigator.clipboard.writeText(credID);
+                                                // alert('Content copied to clipboard');
+                                                credBtn.innerHTML='copied'
+                                                credBtn.setAttribute('disabled','')
+                                            } catch (err) {
+                                                // alert('Failed to copy: ', err);
+                                            }" >copy</button>
+                            <div class="passwd">{{cred.passwd}}</div>
+                            <button class="passBtn" onclick="let textPass = document.querySelector('#{{cred.id}}').querySelector('.passwd').innerHTML;
+                                             let passBtn= document.querySelector('#{{cred.id}}').querySelector('.passBtn');
+                                            try {
+                                                navigator.clipboard.writeText(textPass);
+                                                passBtn.innerHTML='copied'
+                                                passBtn.setAttribute('disabled','')
+                                                // alert('Content copied to clipboard');
+                                            } catch (err) {
+                                                // alert('Failed to copy: ', err);
+                                            }" >copy</button>
+                                        </div>
+                </div>
+                {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
