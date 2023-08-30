@@ -25,8 +25,6 @@
                                                 let credBtn = document.querySelector('#{{cred.id}}').querySelector('.idBtn')
                                                 navigator.clipboard.writeText(credID);
                                                 // alert('Content copied to clipboard');
-                                                credBrn.classList.add('active');
-                                                //credBtn.innerHTML='<i class="fa-solid fa-check"></i>'
                                                 credBtn.setAttribute('disabled','')
                                             } catch (err) {
                                                 // alert('Failed to copy: ', err);
@@ -36,9 +34,8 @@
                                              let passBtn= document.querySelector('#{{cred.id}}').querySelector('.passBtn');
                                             try {
                                                 navigator.clipboard.writeText(textPass);
-                                                passBtn.innerHTML='<i class="fa-solid fa-check"></i>'
-                                                passBtn.classList.add('active')
-                                                //passBtn.setAttribute('disabled','')
+                                                //passBtn.classList.add('active')
+                                                passBtn.setAttribute('disabled','')
                                                 // alert('Content copied to clipboard');
                                             } catch (err) {
                                                 // alert('Failed to copy: ', err);
