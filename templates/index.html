@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PassMan</title>
     <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
 </head>
 <body>
     <div class="outer">
@@ -24,22 +25,24 @@
                                                 let credBtn = document.querySelector('#{{cred.id}}').querySelector('.idBtn')
                                                 navigator.clipboard.writeText(credID);
                                                 // alert('Content copied to clipboard');
-                                                credBtn.innerHTML='copied'
+                                                credBrn.classList.add('active');
+                                                //credBtn.innerHTML='<i class="fa-solid fa-check"></i>'
                                                 credBtn.setAttribute('disabled','')
                                             } catch (err) {
                                                 // alert('Failed to copy: ', err);
-                                            }" >copy</button>
+                                            }" ><i class="fa-regular fa-copy"></i></button>
                             <div class="passwd">{{cred.passwd}}</div>
                             <button class="passBtn" onclick="let textPass = document.querySelector('#{{cred.id}}').querySelector('.passwd').innerHTML;
                                              let passBtn= document.querySelector('#{{cred.id}}').querySelector('.passBtn');
                                             try {
                                                 navigator.clipboard.writeText(textPass);
-                                                passBtn.innerHTML='copied'
-                                                passBtn.setAttribute('disabled','')
+                                                passBtn.innerHTML='<i class="fa-solid fa-check"></i>'
+                                                passBtn.classList.add('active')
+                                                //passBtn.setAttribute('disabled','')
                                                 // alert('Content copied to clipboard');
                                             } catch (err) {
                                                 // alert('Failed to copy: ', err);
-                                            }" >copy</button>
+                                            }" ><i class="fa-regular fa-copy"></i></button>
                                         </div>
                 </div>
                 {% endfor %}
