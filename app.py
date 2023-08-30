@@ -13,7 +13,7 @@ class Credential:
         self.cred_id=cred_id
         self.passwd=passwd
 
-creds=[Credential("Make.com","https://www.make.com/en",getenv("MAKE_EMAIL"),getenv("MAKE_PASS")),Credential("Voiceflow","https://www.voiceflow.com/",getenv("VOICEFLOW_ID"),getenv("VOICEFLOW_PASS")),Credential("Botpress","https://botpress.com/",getenv("BOTPRESS_ID"),getenv("BOTPRESS_PASS")),Credential("Stripe","https://stripe.com/",getenv("STRIPE_ID"),getenv("STRIPE_PASS"))]
+creds=[Credential("Make.com","https://www.make.com/en",getenv("MAKE_EMAIL"),getenv("MAKE_PASS")),Credential("Voiceflow","https://www.voiceflow.com/",getenv("VOICEFLOW_ID"),getenv("VOICEFLOW_PASS")),Credential("Botpress","https://botpress.com/",getenv("BOTPRESS_ID"),getenv("BOTPRESS_PASS")),Credential("Stripe","https://stripe.com/",getenv("STRIPE_ID"),getenv("STRIPE_PASS")),Credential("Make.com","https://www.make.com/en",getenv("MAKE_EMAIL"),getenv("MAKE_PASS")),Credential("Voiceflow","https://www.voiceflow.com/",getenv("VOICEFLOW_ID"),getenv("VOICEFLOW_PASS")),Credential("Botpress","https://botpress.com/",getenv("BOTPRESS_ID"),getenv("BOTPRESS_PASS")),Credential("Stripe","https://stripe.com/",getenv("STRIPE_ID"),getenv("STRIPE_PASS"))]
 
 app=Flask(__name__)
 
